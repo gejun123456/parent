@@ -21,7 +21,7 @@
 
   <groupId>org.mybatis</groupId>
   <artifactId>mybatis-parent</artifactId>
-  <version>28</version>
+  <version>29-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>mybatis-parent</name>
@@ -235,7 +235,7 @@
     <url>http://github.com/mybatis/parent</url>
     <connection>scm:git:ssh://github.com/mybatis/parent.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/mybatis/parent.git</developerConnection>
-    <tag>mybatis-parent-28</tag>
+    <tag>HEAD</tag>
   </scm>
   <issueManagement>
     <system>GitHub Issue Management</system>
@@ -293,6 +293,7 @@
     <signature.group>org.codehaus.mojo.signature</signature.group>
     <signature.artifact>java16</signature.artifact>
     <signature.version>1.1</signature.version>
+    <animal.check.id>check-java-1.6-compat</animal.check.id>
   </properties>
 
   <build>
@@ -370,7 +371,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.10</version>
+          <version>3.0.0</version>
         </plugin>
 
         <plugin>
@@ -418,7 +419,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.0.2</version>
         </plugin>
 
         <plugin>
@@ -468,7 +469,7 @@
         <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.7.7.201606060606</version>
+          <version>0.7.8</version>
         </plugin>
 
         <plugin>
@@ -478,14 +479,14 @@
         </plugin>
 
         <plugin>
-          <groupId>net.revelc.code</groupId>
+          <groupId>net.revelc.code.formatter</groupId>
           <artifactId>formatter-maven-plugin</artifactId>
-          <version>0.5.2</version>
+          <version>2.0.0</version>
           <dependencies>
             <dependency>
               <groupId>com.github.hazendaz</groupId>
               <artifactId>build-tools</artifactId>
-              <version>1.1.2</version>
+              <version>1.1.3</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -546,7 +547,7 @@
         </configuration>
         <executions>
           <execution>
-            <id>check-java-1.6-compat</id>
+            <id>${animal.check.id}</id>
             <phase>process-classes</phase>
             <goals>
               <goal>check</goal>
@@ -798,7 +799,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.7.7.201606060606</version>
+        <version>0.7.8</version>
       </plugin>
 
     </plugins>
@@ -815,7 +816,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>net.revelc.code</groupId>
+            <groupId>net.revelc.code.formatter</groupId>
             <artifactId>formatter-maven-plugin</artifactId>
             <configuration>
               <configFile>eclipse-formatter-config-2space.xml</configFile>
@@ -1027,7 +1028,7 @@
                       <pluginExecutionFilter>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
-                        <versionRange>[0.7.7.201606060606,)</versionRange>
+                        <versionRange>[0.7.8,)</versionRange>
                         <goals>
                           <goal>prepare-agent</goal>
                         </goals>
@@ -1064,9 +1065,9 @@
                     </pluginExecution>
                     <pluginExecution>
                       <pluginExecutionFilter>
-                        <groupId>net.revelc.code</groupId>
+                        <groupId>net.revelc.code.formatter</groupId>
                         <artifactId>formatter-maven-plugin</artifactId>
-                        <versionRange>[0.5.2,)</versionRange>
+                        <versionRange>[2.0.0,)</versionRange>
                         <goals>
                           <goal>format</goal>
                         </goals>
