@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-       Copyright 2010-2016 the original author or authors.
+       Copyright 2010-2017 the original author or authors.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -251,13 +251,14 @@
       <name>Mybatis GitHub Pages</name>
       <url>github:ssh://mybatis.github.io/parent/</url>
     </site>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
+      <snapshotRepository>
+          <id>snapshot</id>
+          <url>http://103.50.253.208:8081/repository/maven-snapshots/</url>
+      </snapshotRepository>
+
     <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <id>releases</id>
+      <url>http://103.50.253.208:8081/repository/maven-releases/</url>
     </repository>
   </distributionManagement>
 
