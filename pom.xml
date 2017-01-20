@@ -292,6 +292,7 @@
     <signature.group>org.codehaus.mojo.signature</signature.group>
     <signature.artifact>java16</signature.artifact>
     <signature.version>1.1</signature.version>
+    <animal.check.id>check-java-1.6-compat</animal.check.id>
   </properties>
 
   <build>
@@ -545,7 +546,7 @@
         </configuration>
         <executions>
           <execution>
-            <id>check-java-1.6-compat</id>
+            <id>${animal.check.id}</id>
             <phase>process-classes</phase>
             <goals>
               <goal>check</goal>
